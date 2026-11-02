@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Poisoned Banquet</title>
+    <meta name="description" content="A fan-made mystery based on the garden party arc of The Apothecary Diaries.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Yuji+Syuku&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <section id="titleScreen" class="title-screen">
+        <div class="title-text">
+            <h1>The Poisoned Banquet</h1>
+            <p class="lede">A mystery based on the garden party arc of <cite>The Apothecary Diaries</cite>, Season 1, episodes 6 to 11.</p>
+            <p>You play as Maomao, Lady Gyokuyou’s food taster. Look around the inner palace, collect clues, and name whoever poisoned the soup. What you find changes where you can go and how the case ends.</p>
+            <p class="small">Contains spoilers for the first half of Season 1.</p>
+
+            <div class="title-buttons">
+                <button id="startBtn" class="big">Start the case</button>
+                <button id="continueBtn" class="big" hidden>Continue the case</button>
+                <button id="restartBtn" class="quiet" hidden>Start over</button>
+            </div>
+
+            <p id="titleEndings" class="small" hidden></p>
+        </div>
+
+        <img class="title-image" src="images/title.jpg" alt="Maomao covering her mouth with her hand, eyes wide">
+    </section>
+
+    <section id="gameScreen" hidden>
+
+        <header class="topbar">
+            <p class="case-name">The Poisoned Banquet</p>
+            <button id="journalBtn" class="journal-btn" aria-haspopup="dialog">
+                Journal <span id="clueCount" class="count">0</span>
+            </button>
+        </header>
+
+        <main class="game">
+
+            <div class="stage">
+                <h2 id="placeName" class="place-name">The Garden Party</h2>
+
+                <figure class="scene">
+                    <img id="sceneImage" alt="">
+                </figure>
+
+                <div id="dialogue" class="dialogue" aria-live="polite">
+                    <img id="speakerImage" class="portrait" alt="">
+                    <div class="dialogue-body">
+                        <p id="speakerName" class="speaker"></p>
+                        <p id="lineText" class="line"></p>
+                    </div>
+                    <button id="nextBtn" class="next">Next</button>
+                </div>
+            </div>
+
+            <aside class="side">
+                <section class="panel">
+                    <h2 id="actionHeading">Look around</h2>
+                    <div id="actionList" class="action-list"></div>
+                </section>
+
+                <section class="panel">
+                    <h2>Go to</h2>
+                    <div id="placeList" class="place-list"></div>
+                </section>
+            </aside>
+
+        </main>
+    </section>
+
+
+    <section id="endingScreen" class="ending-screen" hidden>
+        <div class="ending-card">
+            <img id="endingImage" class="ending-image" alt="">
+            <div class="ending-body">
+                <p id="canonTag" class="canon-tag" hidden>The canon ending</p>
+                <h2 id="endingTitle" tabindex="-1"></h2>
+                <p id="endingText"></p>
+
+                <h3 id="endingCount"></h3>
+                <ol id="endingList" class="ending-list"></ol>
+
+                <div class="ending-buttons">
+                    <button id="chooseAgainBtn">Go back and choose again</button>
+                    <button id="newCaseBtn" class="quiet">Start a new case</button>
+                    <button id="titleBtn" class="quiet">Back to the title</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <dialog id="journal" class="journal" aria-labelledby="journalTitle">
+        <div class="journal-inner">
+            <div class="journal-head">
+                <h2 id="journalTitle">Case journal</h2>
+                <button id="closeJournalBtn" class="quiet">Close</button>
+            </div>
+            <p id="journalCount" class="journal-count"></p>
+            <ul id="clueList" class="clue-list"></ul>
+            <p class="small">Tip: press J to open or close the journal.</p>
+        </div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status"></div>
+
+    <footer class="credits">
+        <p>A fan project by Laksa Fadhil Yansen for CCT360H5 Web Development. Not for commercial use.</p>
+        <p><cite>The Apothecary Diaries</cite> is based on the light novels by Natsu Hyuuga. The story events follow the 2023 anime, Season 1, episodes 6 to 11. All character art and backgrounds are screenshots from the anime and belong to their owners.</p>
+    </footer>
+
+    <script src="js/story.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
