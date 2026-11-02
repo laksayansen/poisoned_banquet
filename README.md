@@ -2,7 +2,7 @@
 
 A fan-made mystery based on the garden party arc of *The Apothecary Diaries* (Season 1, episodes 6 to 11). You play as Maomao, look around the inner palace, collect clues, and name whoever poisoned the soup.
 
-Made by Laksa Fadhil Yansen for CCT360, Project 2: Interactive Discovery.
+Made by Laksa Fadhil Yansen for CCT360: Interactive Discovery.
 
 ## How to run
 
